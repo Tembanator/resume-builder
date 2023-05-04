@@ -6,7 +6,7 @@ import { db } from '../../../firebase'
 import { doc, getDoc, updateDoc } from 'firebase/firestore'
 import { toast } from 'react-toastify'
 import Loader from '../../Loader'
-import Input from './Input'
+import Input from '../educationEdit/Input'
 import { Link, useLocation } from 'react-router-dom'
 
 const EditExperienceForm = () => {
@@ -27,7 +27,6 @@ const EditExperienceForm = () => {
     const [jobTitle, setJobTitle] = useState('')
     const [duration, setDuration] = useState('')
     const [duties, setDuties] = useState([])
-    const [dutiesChanged, setdutiesChanged] = useState(false)
 
     const getCandidateInfo = async () => {
         const docRef = doc(db, 'users', `${user?.email}`)
@@ -64,7 +63,6 @@ const EditExperienceForm = () => {
 
         setDuties([...newDuties])
 
-
         experience[itemPosition] = {
             jobTitle, company,
             duration, duties
@@ -79,13 +77,6 @@ const EditExperienceForm = () => {
         let newDuties = duties
         newDuties.splice(index, 1);
         setDuties([...newDuties])
-    }
-
-    const handleDutyChange = async (e) => {
-        // let newDuties = duties
-        // newDuties[0] = 'changed'
-        // setDuties([...newDuties])
-        console.log('changing')
     }
 
     useEffect(() => {
@@ -153,7 +144,11 @@ const EditExperienceForm = () => {
                                                 onClick={(index) => handleDeleteDuty(index)}
                                                 className='text-purple-400 absolute top-3 right-[-25px] cursor-pointer hover:scale-150' />
                                             <input
-                                                onChange={(e) => console.log(e.target.value)}
+                                                onChange={
+                                                    (e) => {
+                                                        duties[index] = e.target.value
+                                                    }
+                                                }
                                                 className='mb-4 bg-gray-100 border border-opacity-30 outline-none border-purple-950 text-gray-900 text-sm rounded-lg block w-full p-2 pl-8 dark:placeholder-gray-400'
                                                 type="text"
                                                 name='duty'

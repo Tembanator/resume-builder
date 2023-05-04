@@ -10,10 +10,11 @@ import { AuthContextProvider } from "./context/AuthContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import EditEducationForm from "./components/template1/educationEdit/EditEducationForm";
-import EditExperienceForm from "./components/template1/educationEdit/EditExperienceForm";
 import AddEducationForm from "./components/template1/educationEdit/AddEducationForm";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Footer from "./components/Footer";
+import EditExperienceForm from "./components/template1/experinceEdit/EditExperienceForm";
+import AddExperienceForm from "./components/template1/experinceEdit/AddExperienceForm";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
           <Route path='/template1/edit-education' element={<EditEducationForm />} />
           <Route path='/template1/edit-experience' element={<EditExperienceForm />} />
           <Route path='/template1/add-education' element={<AddEducationForm />} />
+          <Route path='/template1/add-experience' element={<AddExperienceForm />} />
           <Route
             path='/template1'
             element={

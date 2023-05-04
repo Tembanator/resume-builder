@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BsFillTelephoneFill, BsFillEnvelopeFill, BsFillPinFill, BsGlobe2, BsFillRecordFill } from 'react-icons/bs'
 import DeleteIcon from './DeleteIcon';
 import EditIcon from './EditIcon';
+import { FiPlus } from 'react-icons/fi';
 
 
 const Skills = () => {
@@ -66,6 +67,20 @@ const Skills = () => {
 
     return (
         <>
+            <div className='section py-6 sm:py-5 relative'>
+                  <span className="after:content-[''] absolute w-full h-[2px] bg-slate-200  bottom-0">
+                  </span>
+                  <div className='section-title'>
+                    <h4 className='group relative font-bold tracking-widest mb-4'>
+                      SKILLS
+                    <FiPlus
+                    onClick={() => setSkills([...skills, 'New skill'])}
+                        size={25}
+                        className='absolute top-0 right-40 font-bold text-purple-600 cursor-pointer hidden group-hover:block'
+                      />
+                    </h4>
+                  </div>
+                  <div className="section-body text-sm">
             {
                 isLoading
                     ? <Loader />
@@ -84,6 +99,8 @@ const Skills = () => {
                         </div>
                     })
             }
+            </div>
+                </div>
         </>
     )
 }

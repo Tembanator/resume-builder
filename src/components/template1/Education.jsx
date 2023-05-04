@@ -76,8 +76,7 @@ const Education = () => {
                                     <Link
                                         to="/template1/edit-education"
                                         state={{ itemPosition: index }} >
-                                        <EditIconClick
-                                            itemPosition={index} />
+                                        <EditIconClick />
                                     </Link>
                                     <p
                                         className='capitalize'>{educationItem?.school}

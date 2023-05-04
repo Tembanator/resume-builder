@@ -106,16 +106,8 @@ const Template1 = () => {
               <div className="column-1 w-full">
 
                 {/* skills section */}
-                <div className='section py-6 sm:py-5 relative'>
-                  <span className="after:content-[''] absolute w-full h-[2px] bg-slate-200  bottom-0">
-                  </span>
-                  <div className='section-title'>
-                    <h4 className='font-bold tracking-widest mb-4'>SKILLS</h4>
-                  </div>
-                  <div className="section-body text-sm">
+                
                     <Skills />
-                  </div>
-                </div>
                 {/* education section */}
                 <div id='education-section' className='section py-6 sm:py-5'>
                   <div className='section-title'>
@@ -136,7 +128,15 @@ const Template1 = () => {
               <div className="column-2 w-full">
                 <div className='section py-6 sm:py-5'>
                   <div className='section-title'>
-                    <h4 className='font-bold tracking-widest mb-4'>EXPERIENCE</h4>
+                    <h4 className='group relative font-bold tracking-widest mb-4'>
+                      EXPERIENCE
+                      <Link to='/template1/add-experience'>
+                        <FiPlus
+                          size={25}
+                          className='absolute top-0 right-40 font-bold text-purple-600 cursor-pointer hidden group-hover:block'
+                        />
+                      </Link>
+                    </h4>
                   </div>
                   <Experience />
 
@@ -148,7 +148,7 @@ const Template1 = () => {
       </div >
       <div className='max-w-[21cm] mx-auto'>
         <button
-        onClick={handlePrint}
+          onClick={handlePrint}
           id='login-btn'
           className='w-full bg-purple-700 text-white p-2 mt-8 hover:bg-purple-900 font-bold rounded cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed mb-8'
         >
