@@ -13,6 +13,7 @@ import EditEducationForm from "./components/template1/educationEdit/EditEducatio
 import EditExperienceForm from "./components/template1/educationEdit/EditExperienceForm";
 import AddEducationForm from "./components/template1/educationEdit/AddEducationForm";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </AuthContextProvider>
       <ToastContainer
         position="top-center"
