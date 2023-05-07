@@ -68,39 +68,39 @@ const Skills = () => {
     return (
         <>
             <div className='section py-6 sm:py-5 relative'>
-                  <span className="after:content-[''] absolute w-full h-[2px] bg-slate-200  bottom-0">
-                  </span>
-                  <div className='section-title'>
+                <span className="after:content-[''] absolute w-full h-[2px] bg-slate-200  bottom-0">
+                </span>
+                <div className='section-title'>
                     <h4 className='group relative font-bold tracking-widest mb-4'>
-                      SKILLS
+                        SKILLS
                     <FiPlus
-                    onClick={() => setSkills([...skills, 'New skill'])}
-                        size={25}
-                        className='absolute top-0 right-40 font-bold text-purple-600 cursor-pointer hidden group-hover:block'
-                      />
+                            onClick={() => setSkills([...skills, 'New skill'])}
+                            size={25}
+                            className='absolute top-0 right-40 font-bold text-purple-600 cursor-pointer hidden group-hover:block'
+                        />
                     </h4>
-                  </div>
-                  <div className="section-body text-sm">
-            {
-                isLoading
-                    ? <Loader />
-                    : skills?.map((skill, index) => {
-                        return <div
-                            key={index}
-                            className="contact-item flex mb-2 items-center space-x-2 relative group cursor-pointer">
-                            <BsFillRecordFill size={10} />
-                            <p
-                                onBlur={async (e) => await handleSkillItemChange(e.target.textContent, index)}
-                                contentEditable={true} className='relative'>
-                                {skill}
-                                <EditIcon />
-                            </p>
-                            <DeleteIcon deleteFunction={deleteSkillItem} itemToDelete={'skill'} />
-                        </div>
-                    })
-            }
-            </div>
                 </div>
+                <div className="section-body text-sm">
+                    {
+                        isLoading
+                            ? <Loader />
+                            : skills?.map((skill, index) => {
+                                return <div
+                                    key={index}
+                                    className="contact-item flex mb-2 items-center space-x-2 relative group cursor-pointer">
+                                    <BsFillRecordFill size={10} />
+                                    <p
+                                        onBlur={async (e) => await handleSkillItemChange(e.target.textContent, index)}
+                                        contentEditable={true} className='relative'>
+                                        {skill}
+                                        <EditIcon />
+                                    </p>
+                                    <DeleteIcon deleteFunction={deleteSkillItem} itemToDelete={'skill'} />
+                                </div>
+                            })
+                    }
+                </div>
+            </div>
         </>
     )
 }

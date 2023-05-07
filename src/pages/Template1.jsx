@@ -62,7 +62,7 @@ const Template1 = () => {
   return (
     <>
       <div ref={componentRef}>
-        <div id='cv' className='max-w-[21cm] mx-auto bg-gray-100 text-gray-700 relative'>
+        <div id='cv' className='max-w-[21cm] mx-auto bg-white text-gray-700 relative'>
           <div className='bg-slate-300 p-6'>
             <div className='max-w-[650px] mx-auto'>
               <div className=''>

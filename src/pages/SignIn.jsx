@@ -44,7 +44,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className='h-screen bg-gradient-to-r from-purple-600 to-blue-600 p-8'>
+      <div className='p-8'>
         <div className='bg-slate-200 rounded-lg shadow-2xl max-w-[400px] min-w-[260px] mx-auto p-6 pb-12 md:p-12'>
           <h2 className='text-center font-bold text-xl md:text-2xl text-gray-800 mb-6'>Sign In</h2>
           <form onSubmit={handleSubmit} className='w-full'>

@@ -87,7 +87,7 @@ const EditEducationForm = () => {
                                     onChange={setCertificate}
                                     placeholder={'Certificate'}
                                     name={'certificate'}
-                                    value={certificate.toUpperCase()} />
+                                    value={certificate?.toUpperCase()} />
 
                                 <Input
                                     className=''

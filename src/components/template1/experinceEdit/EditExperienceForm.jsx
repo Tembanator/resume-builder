@@ -54,14 +54,14 @@ const EditExperienceForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        let newDuties = []
-        let inputNodes = document.getElementsByName('duty')
-        let divsArr = Array.from(inputNodes)
-        divsArr.map((duty) => {
-            newDuties.push(duty.value)
-        })
+        // let newDuties = []
+        // let inputNodes = document.getElementsByName('duty')
+        // let divsArr = Array.from(inputNodes)
+        // divsArr.map((duty) => {
+        //     newDuties.push(duty.value)
+        // })
 
-        setDuties([...newDuties])
+        // setDuties([...newDuties])
 
         experience[itemPosition] = {
             jobTitle, company,
@@ -77,6 +77,11 @@ const EditExperienceForm = () => {
         let newDuties = duties
         newDuties.splice(index, 1);
         setDuties([...newDuties])
+        experience[itemPosition] = {
+            jobTitle, company,
+            duration, duties
+        }
+        await updateExperience(experience)
     }
 
     useEffect(() => {
@@ -108,7 +113,7 @@ const EditExperienceForm = () => {
                                     onChange={setJobTitle}
                                     placeholder={'Job title'}
                                     name={'jobTitle'}
-                                    value={jobTitle.toUpperCase()} />
+                                    value={jobTitle?.toUpperCase()} />
 
                                 <Input
                                     className=''
@@ -134,14 +139,14 @@ const EditExperienceForm = () => {
                                         className='text-purple-400 absolute top-1 left-[65px] cursor-pointer hover:scale-150' />
                                 </h4>
                                 {
-                                    duties.map((duty, index) => {
+                                    duties?.map((duty, index) => {
                                         return <div
                                             key={index}
                                             className='relative'>
                                             <TbBrandFlightradar24
                                                 className='text-purple-900 absolute top-3 left-2' />
                                             <TbTrashFilled
-                                                onClick={(index) => handleDeleteDuty(index)}
+                                                onClick={() => handleDeleteDuty(index)}
                                                 className='text-purple-400 absolute top-3 right-[-25px] cursor-pointer hover:scale-150' />
                                             <input
                                                 onChange={
